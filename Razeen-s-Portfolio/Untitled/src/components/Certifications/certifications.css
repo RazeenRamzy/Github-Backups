@@ -1,0 +1,224 @@
+:root {
+  --background-light: rgba(255, 255, 255, 0.9);
+  --background-dark: rgba(34, 34, 34, 0.9);
+  --text-light: #333;
+  --text-dark: #fff;
+  --card-background-light: rgba(255, 255, 255, 0.8);
+  --card-background-dark: rgba(34, 34, 34, 0.8);
+  --card-shadow-light: rgba(0, 0, 0, 0.1);
+  --card-shadow-dark: rgba(0, 0, 0, 0.5);
+  --primary-color: #fffdfc;
+  --secondary-color: #0a3d69;
+}
+
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-theme {
+  --background: var(--background-light);
+  --text-color: var(--text-light);
+  --card-background: var(--card-background-light);
+  --card-shadow: var(--card-shadow-light);
+}
+
+body.dark-theme {
+  --background: var(--background-dark);
+  --text-color: var(--text-dark);
+  --card-background: var(--card-background-dark);
+  --card-shadow: var(--card-shadow-dark);
+}
+.certifications-container {
+  padding: 2rem 0;
+  background: var(--background);
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  background-color: var(--clr-bg);
+  
+}
+
+.cert-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 -1rem;  /* Negative margin to counteract padding on cols */
+}
+
+.cert-cards-row > [class*='col-'] {
+  padding: 0 1rem;  
+}
+
+.cert-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--card-background);
+  box-shadow: 0 4px 8px var(--card-shadow);
+  border-radius: 10px;
+  cursor: pointer;
+  /* border: 2px solid rgb(14, 12, 42);  */
+  border-radius: 15px;
+  box-shadow: var(--shadow) !important;
+  transition: all 0.5s ease 0s !important;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--card-shadow);
+}
+
+.cert-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding-top: 75%; /* 4:3 aspect ratio */
+  /* border: 2px solid black;  */
+}
+
+.cert-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.cert-image-wrapper:hover img {
+  transform: scale(1.1);
+}
+
+.cert-card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.cert-card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+/* ... (rest of the CSS remains the same) ... */
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #3a8ae5;
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--primary-color), 10%);
+  border-color: darken(var(--primary-color), 10%);
+}
+
+.btn-secondary {
+  background-color: var(--primary-color);
+  border-color: var(--secondary-color);
+  color: #050329;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: #ffffff;
+}
+
+.text-center h1 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+.modal-content {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.modal-body {
+  padding: 0;
+  position: relative;
+}
+
+.modal-image-container {
+  position: relative;
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.zoomed-image {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px 8px 0 0;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0 0 8px 8px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 1050;
+}
+
+.certification-heading {
+  color: var(--clr-txt);
+  font-size: 2.3em;
+  font-weight: 500;
+  padding-top: 60px;
+  padding-bottom: 10px;
+}
+
+.certification-p {
+  color: var(--clr-txt);
+  font-size: 1.2em;
+}
+
+@media (max-width: 1200px) {
+  .cert-card {
+    width: calc(50% - 2rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .cert-card {
+    width: 100%;
+  }
+}

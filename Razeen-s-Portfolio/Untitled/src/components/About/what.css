@@ -1,0 +1,98 @@
+.card-stack-container {
+  position: relative;
+  height: 400px;
+  width: 90%;
+  max-width: 350px;
+  margin: 50px auto;
+  perspective: 1000px;
+  margin-bottom: 90px;
+
+}
+
+.stacked-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.6s ease;
+  cursor: grab;
+  backface-visibility: hidden;
+  overflow: hidden;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.light-mode .stacked-card {
+  background-color: white;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.dark-mode .stacked-card {
+  background-color: #2c2c2c;
+  color: white;
+  box-shadow: 0 4px 8px rgba(255,255,255,0.1);
+}
+
+.stacked-card.active {
+  transform: translateY(0) rotate(0deg) !important;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.stacked-card.swiped-left {
+  transform: translateX(-120%) rotate(-20deg) !important;
+  opacity: 0;
+}
+
+.stacked-card.swiped-right {
+  transform: translateX(120%) rotate(20deg) !important;
+  opacity: 0;
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.stacked-card h5 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.stacked-card p {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .card-stack-container {
+    height: 350px;
+  }
+
+  .stacked-card h5 {
+    font-size: 1rem;
+  }
+
+  .stacked-card p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-stack-container {
+    height: 300px;
+  }
+
+  .card-icon {
+    font-size: 1.5rem;
+  }
+
+  .stacked-card h5 {
+    font-size: 0.9rem;
+  }
+
+  .stacked-card p {
+    font-size: 0.7rem;
+  }
+}

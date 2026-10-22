@@ -1,0 +1,328 @@
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.1s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.home-header {
+  padding-top: 80px !important;
+}
+
+.home-section {
+  position: relative;
+  z-index: 1;
+  background-color: var(--clr-bg);
+  padding-bottom: 30px !important;
+  padding-top: 30px !important;
+}
+
+.home-content {
+  padding: 9rem 2rem !important;
+  color: var(--clr-txt);
+  text-align: left;
+}
+
+.heading {
+  font-size: 2.4em !important;
+  padding-left: 50px !important;
+}
+
+.heading-name {
+  font-size: 5em !important;
+  padding-left: 45px !important;
+}
+
+.main-name {
+  color: var(--clr-primary) !important;
+}
+
+.Typewriter__wrapper {
+  font-size: 1.5em !important;
+  color: var(--clr-primary) !important;
+  font-weight: 600 !important;
+  padding-left: 25px;
+}
+.Typewriter__cursor {
+  font-size: 2.4em !important;
+  color: var(--clr-primary) !important;
+}
+
+@media (max-width: 991px) {
+  .heading {
+    font-size: 2.3em !important;
+    padding-left: 0px !important;
+    text-align: left !important;
+  }
+
+  .heading-name {
+    font-size: 4em !important;
+    padding-left: 0px !important;
+    text-align: left !important;
+  }
+  .type{
+    padding-left: 0px;
+  }
+  .Typewriter__wrapper {
+    font-size: 1.3em !important;
+    padding: 0px !important;
+  }
+  .Typewriter__cursor {
+    font-size: 1.5em !important;
+  }
+}
+@media (max-width: 767px) {
+  .heading {
+    font-size: 2.2em !important;
+    padding-left: 20px !important;
+    text-align: left !important;
+  }
+
+  .heading-name {
+    font-size: 3em !important;
+    padding-left: 20px !important;
+    text-align: left !important;
+  }
+  .type{
+    text-align: left !important;
+  }
+  .Typewriter__wrapper {
+    text-align: center !important;
+    font-size: 1.2em !important;
+    font-weight: 400 !important;
+    position: absolute;
+  }
+
+  .Typewriter__cursor {
+    display: none !important;
+  }
+}
+
+.myAvtar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -1em auto;
+}
+
+.myAvtar img {
+  width: 130%;
+  max-width: 400px;
+  height: 70%;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.myAvtar img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+.home-about-section {
+  position: relative;
+  padding-bottom: 90px;
+  padding-top: 70px;
+  background-color: var(--clr-bg-alt);
+  text-align: center; /* Center text within the container */
+}
+
+.home-about-description {
+  color: var(--clr-txt);
+  padding-top: 20px; /* Adjust the top padding as needed */
+  padding-bottom: 20px; /* Adjust the bottom padding as needed */
+  
+}
+
+.home-about-body {
+  padding-top: 20px;
+  font-size: 1.1em;
+  text-align: left;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--clr-txt);
+}
+
+.primary-header {
+  color: var(--clr-txt);
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+.home-about-social {
+  text-align: center !important;
+  padding-top: 25px;
+  color: var(--clr-txt) !important;
+}
+
+
+.home-about-social-links {
+  justify-content: center !important;
+  padding-top: 15px !important;
+  display: inline-block !important;
+  position: relative !important;
+  padding-inline-start: 0 !important;
+}
+
+.home-social-icons {
+  position: relative !important;
+  display: inline-block !important;
+  width: 40px !important;
+  height: 40px !important;
+  text-align: center !important;
+  font-size: 1.2em !important;
+  line-height: 2em !important;
+  background: var(--clr-bg) !important;
+  box-shadow: var(--shadow) !important;
+  border-radius: 50% !important;
+  transition: 0.5s !important;
+}
+
+
+.home-social-icons::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--clr-primary);
+  transition: 0.5s;
+  transform: scale(0.9);
+  z-index: -1;
+}
+
+.home-social-icons:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--clr-primary);
+}
+
+.home-social-icons:hover {
+  color: var(--clr-primary);
+  box-shadow: 0 0 5px var(--clr-primary);
+  text-shadow: 0 0 2px var(--clr-primary);
+}
+
+.social-icons {
+  display: inline-block !important;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: var(--clr-primary);
+}
+
+.icon-colour {
+  color: var(--clr-primary) !important;
+}
+
+
+
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  background-color: var(--clr-bg);
+  color: var(--clr-txt);
+}
+
+.flip-card-back {
+  background-color: var(--clr-bg);
+  color: var(--clr-txt);
+  transform: rotateY(180deg);
+}
+
+.flip-card-front img, .flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Adjust existing styles */
+.myAvtar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:initial;
+  height: 400px; /* Set a fixed height */
+  border-radius: 20px;
+  margin-top: 120px;
+}
+
+.myAvtar .flip-card {
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+}
+
+.myAvtar .flip-card-inner {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.6s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.myAvtar .flip-card:hover .flip-card-inner {
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+
