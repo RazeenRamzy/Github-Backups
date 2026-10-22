@@ -1,0 +1,18 @@
+.select-field {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  .select-field label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  .select-field select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }

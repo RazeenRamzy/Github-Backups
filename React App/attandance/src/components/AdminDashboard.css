@@ -1,0 +1,11 @@
+.admin-dashboard {
+    padding: 20px;
+  }
+  
+  .controls {
+    margin-bottom: 20px;
+  }
+  
+  .controls > * {
+    margin-right: 10px;
+  }
